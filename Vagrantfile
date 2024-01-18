@@ -72,6 +72,8 @@ Vagrant.configure("2") do |config|
     # Change VM's webserver's configuration to use shared folder.
     # (Look inside test-website.conf for specifics.)
     cp /vagrant/test-website.conf /etc/apache2/sites-available/
+    # fetch some content from the Internet at the time that the VM is deployed
+    wget -O /vagrant/www/shin.png https://static.wikia.nocookie.net/crayonshinchan/images/6/6d/SHIN.png
     # install our website configuration and disable the default
     a2ensite test-website
     a2dissite 000-default
